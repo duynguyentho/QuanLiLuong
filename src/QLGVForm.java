@@ -27,6 +27,7 @@ public class QLGVForm extends JFrame {
     private JTextField txtPhat;
     private JComboBox cbNam;
     private JLabel id;
+    private JMenuItem logout;
     public static String action;
     Vector Col;
     public QLGVForm() throws SQLException {
@@ -91,6 +92,19 @@ public class QLGVForm extends JFrame {
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
+            }
+        });
+        logout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    Login login = new Login();
+                    login.setVisible(true);
+                    exitWindow();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
             }
         });
     }
